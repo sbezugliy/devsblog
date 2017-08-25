@@ -1,0 +1,26 @@
+<div id="root" style="width: 320px; margin: 40px auto; padding: 10px; border-style: dashed; border-width: 1px; box-sizing: border-box;">
+    embedded area
+</div>
+<script src="https://cdn.auth0.com/js/lock/10.2/lock.min.js"></script>
+<script>
+  var lock = new Auth0Lock(
+    '<%= Rails.application.secrets.auth0_client_id %>',
+    '<%= Rails.application.secrets.auth0_domain %>',
+    {
+      allowedConnections: ["Username-Password-Authentication","google-oauth2","facebook","twitter","vkontakte","github","instagram"],
+      rememberLastLogin: true,
+      socialButtonStyle: "small",
+      languageDictionary: {"title":"Auth0"},
+      language: "en",
+      theme: {"primaryColor":"#40DF7D"},
+      container: 'root',
+      auth: {
+        redirectUrl: '<%= root_url %>' + 'auth/auth0/callback',
+        responseType: 'code',
+        params: {
+          scope: 'openid profile email' // Learn about scopes: https://auth0.com/docs/scopes
+        }
+      }
+    });
+  lock.show();
+</script>
