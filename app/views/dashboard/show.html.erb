@@ -1,4 +1,14 @@
-<div>
-  <img class="avatar" src="<%= @user[:info][:image] %>"/>
-  <h2>Welcome <%= @user[:info][:name] %></h2>
+<div class="grid-container fluid">
+  <div class="grid-x grid-margin-x">
+    <div class="cell small-4 medium-4 large-4">cell</div>
+    <div class="cell small-4 medium-4 large-4">
+      <div class="card">
+        <div class="card-section">
+            <h2>Welcome <%= @user[:info][:name] %></h2>
+        </div>
+        <img class="avatar" src="<%= @user[:info][:image] %>"/>
+      </div>
+    </div>
+    <div class="cell small-4 medium-4 large-4">cell</div>
+  </div>
 </div>
