@@ -1,4 +1,5 @@
 <%= form_with(model: page, local: true) do |form| %>
+<div class="medium-12 columns">
   <% if page.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(page.errors.count, "error") %> prohibited this page from being saved:</h2>
@@ -11,17 +12,17 @@
     </div>
   <% end %>
 
-  <div class="field">
+</div>
+
+   <div class="medium-12 columns">
     <%= form.label :name %>
     <%= form.text_field :name, id: :page_name %>
   </div>
-
-  <div class="field">
+ <div class="medium-12 columns">
     <%= form.label :content %>
     <%= form.text_area :content, id: :page_content %>
   </div>
-
-  <div class="actions">
-    <%= form.submit %>
+   <div class="medium-12 columns">
+    <%= form.submit class: "success button" %>
   </div>
 <% end %>

@@ -1,14 +1,18 @@
-<p id="notice"><%= notice %></p>
-
-<p>
-  <strong>Name:</strong>
-  <%= @page.name %>
-</p>
-
-<p>
-  <strong>Content:</strong>
-  <%= @page.content %>
-</p>
-
-<%= link_to 'Edit', edit_page_path(@page) %> |
-<%= link_to 'Back', pages_path %>
+<div class="row">
+  <div class="medium-12 columns">
+<p class="callout primary"><%= notice %></p>
+</div>
+<div class="medium-12 columns">
+<dl>
+  <dt>Name:</dt>
+  <dd><%= @page.name %></dd>
+  <dt><strong>Content:</strong></dt>
+  <dd><%= @page.content %></dd>
+</dl>
+</div>
+<div class="medium-4 columns">
+<%= link_to 'Edit', edit_page_path(@page), class: "button" %>
+</div>
+<div class="medium-4 columns">
+<%= link_to 'Back', pages_path, class: "button" %>
+</div>
