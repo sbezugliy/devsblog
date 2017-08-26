@@ -5,17 +5,18 @@
       <p class="callout primary"><%= notice %></p>
     </div>
   <% end %>
+  <br/>
+  <div class="medium-4 columns">
+    <%= link_to 'Edit', edit_page_path(@page), class: "button" %>
+  </div>
+  <div class="medium-4 columns">
+    <%= link_to 'Back', pages_path, class: "button" %>
+  </div>
   <div class="medium-12 columns text-center">
     <h1><%= @page.name %></h1>
   <hr/>
   </div>
   <div class="medium-12 columns">
     <%= @page.content.html_safe %>
-  </div>
-  <div class="medium-4 columns">
-    <%= link_to 'Edit', edit_page_path(@page), class: "button" %>
-  </div>
-  <div class="medium-4 columns">
-    <%= link_to 'Back', pages_path, class: "button" %>
   </div>
 </div>
