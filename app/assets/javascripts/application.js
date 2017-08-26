@@ -11,14 +11,13 @@
 // about supported directives.
 //
 //= require jquery2
-//= require jquery_ujs
+
 //= require jquery.turbolinks
 //= require foundation
 //= require foundation.core.js
 //= require foundation.offcanvas.js
 //= require rails-ujs
 //= require turbolinks
-//= require_tree .
 
 
 // Froala / WYSIWYG rails
