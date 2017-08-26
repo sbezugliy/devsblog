@@ -1,7 +1,10 @@
 <div class="row">
-  <div class="medium-12 columns">
-    <p class="callout primary"><%= notice %></p>
-  </div>
+  <% if notice then %>
+    <div class="medium-12 columns">
+      <br/>
+      <p class="callout primary"><%= notice %></p>
+    </div>
+  <% end %>
   <div class="medium-12 columns">
     <h1>Pages</h1>
 
@@ -9,7 +12,6 @@
       <thead>
         <tr>
           <th>Name</th>
-          <th>Content</th>
           <th colspan="3"></th>
         </tr>
       </thead>
@@ -18,7 +20,6 @@
         <% @pages.each do |page| %>
           <tr>
             <td><%= page.name %></td>
-            <td><%= page.content %></td>
             <td><%= link_to 'Show', page %></td>
             <td><%= link_to 'Edit', edit_page_path(page) %></td>
             <td><%= link_to 'Destroy', page, method: :delete, data: { confirm: 'Are you sure?' } %></td>
